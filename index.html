@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Марат & Айгерим — Тойго чакыруу</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  background: linear-gradient(135deg, #f8efe3, #fffaf2, #ead8bb);
+  color: #60452e;
+  font-family: Georgia, serif;
+}
+.invitation {
+  width: 100%;
+  max-width: 480px;
+  padding: 38px 22px;
+  text-align: center;
+  border: 2px solid #c7a56b;
+  outline: 1px solid #c7a56b;
+  outline-offset: 7px;
+  background: rgba(255,255,255,.8);
+  box-shadow: 0 12px 35px #80633a22;
+}
+.small { letter-spacing: 4px; font-size: 12px; }
+h1 {
+  font-size: clamp(34px, 9vw, 48px);
+  font-weight: normal;
+  margin: 25px 0;
+  color: #9a7544;
+}
+.amp { color: #c7a56b; font-style: italic; }
+.line { width: 90px; height: 1px; background: #c7a56b; margin: 22px auto; }
+p { line-height: 1.8; font-size: 16px; }
+.date { font-size: 27px; color: #9a7544; }
+button {
+  border: none;
+  background: #9a7544;
+  color: white;
+  border-radius: 24px;
+  padding: 13px 22px;
+  margin: 8px 4px;
+  font-size: 15px;
+}
+</style>
+</head>
+<body>
+<main class="invitation">
+  <div class="small">ТОЙГО ЧАКЫРУУ</div>
+  <div class="line"></div>
+  <p>Урматтуу коноктор!</p>
+  <p>Сиздерди биздин кубанычтуу күнүбүздүн кадырлуу коногу болууга чакырабыз.</p>
+  <h1>Марат <span class="amp">&</span><br> Айгерим</h1>
+  <div class="line"></div>
+  <p class="date">31-ОКТЯБРЬ</p>
+  <p>Саат 17:00</p>
+  <p><strong>Өтүүчү жер:</strong><br>«Салкын Жай» рестораны<br>Бишкек шаары</p>
+  <div class="line"></div>
+  <p>Тойго чакыргандар:<br><strong>Бакыт & Назира</strong></p>
+  <button onclick="shareInvite()">Чакыруу менен бөлүшүү</button>
+  <p class="small">СИЗДЕРДИ КҮТӨБҮЗ!</p>
+</main>
+<script>
+function shareInvite() {
+  if (navigator.share) {
+    navigator.share({
+      title: 'Марат & Айгерим — Тойго чакыруу',
+      text: 'Сиздерди Марат менен Айгеримдин тоюна чакырабыз!'
+    });
+  } else {
+    alert('Бул чакыруу барагынын шилтемесин браузерден көчүрүп бөлүшүңүз.');
+  }
+}
+</script>
+</body>
+</html>
